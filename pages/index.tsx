@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { QueryClient, QueryClientProvider } from 'react-query';
 import LaunchDataWithStates from './components/launch-data-with-states';
+import Link from 'next/link';
 
 export default function Home() {
   const queryClient = new QueryClient();
@@ -16,7 +17,13 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossOrigin="anonymous" />
         </Head>
-
+        <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+          <div className="container-fluid">
+            <Link href="/">
+              <a className="navbar-brand">Launches</a>
+            </Link>
+          </div>
+        </nav>
         <main className={styles.main}>
           <div className="container">
             <LaunchDataWithStates />
