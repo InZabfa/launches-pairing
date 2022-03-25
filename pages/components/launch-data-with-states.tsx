@@ -1,7 +1,8 @@
+import { ReactElement } from "react";
 import GetLaunchData from "../api/get-launch-data";
 import { MissionComponent } from "./mission-component";
 
-export default function LaunchDataWithStates() {
+export function LaunchDataWithStates(): ReactElement {
     const payload = GetLaunchData();
     const data = payload.data?.slice(0, 10);
 
@@ -12,11 +13,15 @@ export default function LaunchDataWithStates() {
         </div>
     );
 
+    const ErrorComponent = () => (
+        <div className="alert alert-danger" role="alert">
+            Oops! Something went wrong
+        </div>
+    );
+
     if (payload.error) {
         return (
-            <div className="alert alert-danger" role="alert">
-                Oops! Something went wrong
-            </div>
+            <ErrorComponent />
         );
     }
 

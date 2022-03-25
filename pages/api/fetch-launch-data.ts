@@ -1,11 +1,12 @@
 import { TLaunchData } from "./fetch-launch-data.types";
+import fetch from 'node-fetch';
 
 export default async function fetchLaunchData(): Promise<TLaunchData[]> {
   const response = await fetch(`https://api.spacexdata.com/v3/launches`,
     {
       method: 'GET',
       headers: {
-        'Accept': 'aapplication/json; charset=utf-8',
+        'Accept': 'application/json; charset=utf-8',
         'Content-Type': 'application/json; charset=utf-8',
       }
     }

@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { QueryClient, QueryClientProvider } from 'react-query';
-import LaunchDataWithStates from './components/launch-data-with-states';
+import { LaunchDataWithStates } from './components/launch-data-with-states';
 import Link from 'next/link';
 
 export default function Home() {
